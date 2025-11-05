@@ -59,6 +59,18 @@ pipeline {
                 }
             }
         }
+
+    
+        stage('Run') {
+            steps {
+                script {
+                    sh '''
+                    echo "Generating test report..."
+                    sudo make run
+                    '''
+                }
+            }
+        }
     }
 
     post {
